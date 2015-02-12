@@ -1,7 +1,7 @@
 module Citygram::Routes
   class Pages < Citygram::App
     get '/' do
-      @publishers = Publisher.visible
+      @publishers = Publisher.active
       erb :index
     end
   end
