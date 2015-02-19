@@ -27,7 +27,6 @@ gem 'sprockets', '~> 2.12'
 gem 'twilio-ruby', '~> 3.11'
 gem 'uglifier'
 gem 'unicorn'
-gem 'factory_girl'
 
 group :production do
   gem 'newrelic_rpm', require: false
@@ -38,6 +37,7 @@ group :development do
 end
 
 group :test do
+  gem 'factory_girl'
   gem 'rack-test'
   gem 'rspec', '~> 3.0'
   gem 'webmock'
