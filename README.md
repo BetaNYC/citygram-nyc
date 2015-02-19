@@ -48,8 +48,49 @@ rake # run the test suite
 bundle exec rackup
 ```
 
-To boot up the complete application and run background jobs in development:
+### Usage
+
+#### Development
 
 ```
 bundle exec foreman start -f Procfile.dev
 ```
+
+#### Production
+
+This should work out of the box on [Heroku](https://heroku.com)
+
+```
+bundle exec foreman start
+```
+
+### Domain
+
+#### City
+
+These are loaded from 'config/geojson', static data, easy to understand.
+
+#### Event
+
+TODO
+
+#### Publisher
+
+In order for a city to show up it needs a publisher.
+
+A publisher is a source of information, for example the NYC 311 service.
+
+```
+> bundle exec rake console
+  DB[:publishers].insert(
+    visible: true, active: true, \
+    title: "311", tags: Sequel.pg_array(["new-york"]), \
+    city: "new-york", icon: "phone.png" \
+  )
+```
+
+[http://localhost:9292/new-york](http://localhost:9292/new-york)
+
+#### Subscription
+
+TODO
