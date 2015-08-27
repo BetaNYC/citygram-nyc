@@ -33,6 +33,10 @@ module Citygram::Models
         where(channel: 'sms')
       end
 
+      def sms
+        where(channel: 'sms')
+      end
+
       def active
         where(unsubscribed_at: nil)
       end

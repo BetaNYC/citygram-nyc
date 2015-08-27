@@ -1,7 +1,16 @@
 require 'factory_girl'
-require 'spec/support/fixture_helpers'
+require_relative '../app'
+require_relative 'support/fixture_helpers'
 
 FactoryGirl.define do
+  sequence :email_address do |number|
+    "#{number}@example.com"
+  end
+
+  sequence :phone_number do |number|
+    "+1#{number.to_s * 10}"[0...12]
+  end
+
   factory :publisher, class: Citygram::Models::Publisher do
     sequence(:title) { |n| "Title-#{n}"  }
     sequence(:endpoint) { |n| "https://www.example.com/path-#{n}" }
@@ -19,6 +28,8 @@ FactoryGirl.define do
   end
 
   factory :subscription, class: Citygram::Models::Subscription do
+    email_address
+    phone_number
     publisher
     sequence(:webhook_url) { |n| "https://www.example.com/path-#{n}" }
     channel 'webhook'

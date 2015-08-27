@@ -7,6 +7,7 @@ require 'app/routes/validations/max'
 
 require 'app/routes/helpers'
 
+require 'app/routes/analytics'
 require 'app/routes/digests'
 require 'app/routes/events'
 require 'app/routes/page'

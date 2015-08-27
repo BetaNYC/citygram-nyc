@@ -1,6 +1,7 @@
 require './app'
 
 unprotected_routes = [
+  Citygram::Routes::Analytics,
   Citygram::Routes::Events,
   Citygram::Routes::Publishers,
   Citygram::Routes::Subscriptions,

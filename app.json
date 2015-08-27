@@ -1,0 +1,71 @@
+{
+  "name":"CityGram",
+  "description":"",
+  "scripts": {},
+  "env": {
+    "APPLICATION_URL": {
+      "required": true
+    },
+    "BASIC_AUTH_PASSWORD": {
+      "required": true
+    },
+    "BASIC_AUTH_USERNAME": {
+      "required": true
+    },
+    "DEV_EMAIL_RECIPIENT": {
+      "required": true
+    },
+    "DIGEST_DAY": {
+      "required": true
+    },
+    "LANG": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "REDIS_PROVIDER": {
+      "required": true
+    },
+    "ROOT_CITY_TAG": {
+      "required": true
+    },
+    "SMTP_ADDRESS": {
+      "required": true
+    },
+    "SMTP_DOMAIN": {
+      "required": true
+    },
+    "SMTP_FROM_ADDRESS": {
+      "required": true
+    },
+    "SMTP_PASSWORD": {
+      "required": true
+    },
+    "SMTP_PORT": {
+      "required": true
+    },
+    "SMTP_USER_NAME": {
+      "required": true
+    },
+    "TWILIO_ACCOUNT_SID": {
+      "required": true
+    },
+    "TWILIO_AUTH_TOKEN": {
+      "required": true
+    },
+    "TWILIO_FROM_NUMBER": {
+      "required": true
+    },
+    "UNICORN_WORKERS": {
+      "required": true
+    }
+  },
+  "addons": [
+    "papertrail:choklad",
+    "redistogo:nano"
+  ],
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate data:import db:seed"
+  }
+}
