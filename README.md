@@ -33,7 +33,7 @@ Citygram is a web application written in Ruby.
 ### Setup
 
 * Install Redis - `brew install redis`
-* [Install PostgreSQL](https://github.com/codeforamerica/howto/blob/master/PostgreSQL.md)
+* [Install PostgreSQL (with PostGIS extensions)](https://github.com/codeforamerica/howto/blob/master/PostgreSQL.md)
 * Install Ruby ([rbenv guide](https://github.com/sstephenson/rbenv#installation))
 
 In the command line, run the following:
